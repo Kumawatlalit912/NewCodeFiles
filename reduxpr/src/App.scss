@@ -1,0 +1,25 @@
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+}
+.navigation{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap:45px;
+  height:80px;
+  padding-right:20px;
+  margin-bottom:20px;
+  box-shadow: 2px 2px 15px black;
+  transition:.8s; 
+  background-color:rgb(152, 206, 219);
+}
+nav *{
+  text-decoration: none;
+  &:hover{
+  background-color: bisque;
+  color:blue;
+  }
+  
+}
