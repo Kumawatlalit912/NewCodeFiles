@@ -1,12 +1,24 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom';
+import { useToast } from '@chakra-ui/react';
+import { useDispatch} from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
     const dispatch=useDispatch();
-    // if(isAuthenticate) return <Navigate to={'/blog'} />
-    function multiFunc(){
+    const navigate=useNavigate();
+    // const {isAuthenticate}=useSelector((state)=>state.root)
+    const toast=useToast();
+
+    const multiFunc=()=>{
         dispatch({type:'login'});
+        navigate('/blog');
+        toast({
+            title:'Login',
+            description:'Login successfully',
+            status:'success',
+            duration:3000,
+            isClosable:true,
+        })
     }
   return (
     <div>
